@@ -5,24 +5,23 @@ x = 50
 y = 50
 width = 40
 height = 60
-vel = 5
+vel = 3
 fps = 30
-BLACK = (0, 0, 0)
-WHITE = (255, 255, 255)
-RED = (255, 0, 0)
-GREEN = (0, 255, 0)
-BLUE = (0, 0, 255)
-clock = pygame.time.Clock()
+black = (0, 0, 0)
+white = (255, 255, 255)
+red = (255, 0, 0)
+green = (0, 255, 0)
+blue = (0, 0, 255)
 
 pygame.init()
-screen = pygame.display.set_mode((1000,750))
+display = pygame.display.set_mode((1000,750))
 pygame.display.set_caption("Venus")
-clock = pygame.time.Clock()
+time = pygame.time.Clock()
 
 
 run = True
 while run:
-    clock.tick(fps)
+    time.tick(fps)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             run = False
@@ -35,9 +34,9 @@ while run:
         y -= vel
     if key[pygame.K_DOWN]:
         y += vel
-    screen.fill(BLACK)
-    screen.blit(background, (0,0))
-    pygame.draw.rect(screen,(255,0,0),(x,y,width,height))
+    display.fill(black)
+    display.blit(background, (0,0))
+    pygame.draw.rect(display,(255,0,0),(x,y,width,height))
     pygame.display.update()
     
     pygame.display.flip()
